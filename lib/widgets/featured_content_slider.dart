@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fitness_magazine/models/content_models.dart';
 import 'package:fitness_magazine/views/article_view_screen.dart';
 import 'package:flutter/material.dart';
@@ -47,32 +48,45 @@ class _FeaturedArticleCard extends StatelessWidget {
           );
         },
         child: Container(
-          width: 220,
+          width: 300,
+          height: 300,
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 150,
-                width: double.infinity,
-                decoration: BoxDecoration(
+              Hero(
+                tag: article.imagePath,
+                child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
-                  image: DecorationImage(
-                    image: AssetImage(article.imagePath),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                child: Stack(
-                  children: const [
-                    Positioned(
-                      top: 12,
-                      left: 13,
-                      child: Icon(
-                        Icons.favorite_border,
-                        size: 30,
-                        color: Colors.white,
+                  child: Stack(
+                    children: [
+                      CachedNetworkImage(
+                        imageUrl: article.imagePath,
+                        width: 300,
+                        height: 150,
+                        fit: BoxFit.cover,
+                        placeholder: (context, url) => SizedBox(
+                          width: 300,
+                          height: 150,
+                          child: CircularProgressIndicator(),
+                        ),
+                        errorWidget: (context, url, error) => SizedBox(
+                          width: 300,
+                          height: 150,
+                          child: Icon(Icons.error),
+                        ),
                       ),
-                    ),
-                  ],
+                      const Positioned(
+                        top: 12,
+                        left: 13,
+                        child: Icon(
+                          Icons.favorite_border,
+                          size: 30,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Align(

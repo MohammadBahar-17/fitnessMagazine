@@ -1,6 +1,6 @@
 import 'package:fitness_magazine/views/dashboard_screen.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter/material.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       theme: ThemeData(
+        fontFamily: 'Somar-Regular',
         appBarTheme: AppBarTheme(
           elevation: 0,
           scrolledUnderElevation: 0,

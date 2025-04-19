@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fitness_magazine/models/content_models.dart';
 import 'package:fitness_magazine/views/article_view_screen.dart';
 import 'package:flutter/material.dart';
@@ -47,22 +48,27 @@ class _ArticleListItem extends StatelessWidget {
         },
         child: Card(
           color: article.themeColor,
-          elevation: 8,
           child: SizedBox(
             height: 120,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Container(
-                  width: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      topRight: Radius.circular(10),
-                      bottomRight: Radius.circular(10),
-                    ),
-                    image: DecorationImage(
-                      image: AssetImage(article.imagePath),
+                ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(10),
+                    bottomRight: Radius.circular(10),
+                  ),
+                  child: Hero(
+                    tag: article.imagePath,
+                    child: CachedNetworkImage(
+                      imageUrl: article.imagePath,
+                      width: 100,
+                      height: 120,
                       fit: BoxFit.cover,
+                      placeholder: (context, url) => const Center(
+                        child: CircularProgressIndicator(),
+                      ),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
                     ),
                   ),
                 ),
@@ -74,6 +80,7 @@ class _ArticleListItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
+                          maxLines: 1,
                           article.title,
                           style: const TextStyle(
                             color: Colors.white,
@@ -83,9 +90,10 @@ class _ArticleListItem extends StatelessWidget {
                         Text(
                           article.summary,
                           overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
                           style: const TextStyle(
                             color: Colors.white,
-                            fontSize: 14,
+                            fontSize: 12,
                           ),
                         ),
                         const SizedBox(height: 10),

@@ -40,7 +40,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         body: Column(
           children: [
             SizedBox(
-              height: 300,
+              height: 320,
               child: FeaturedContentSlider(
                 featuredArticles: _repository.getFeaturedArticles(),
               ),

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class ArticleViewScreen extends StatelessWidget {
@@ -21,15 +22,18 @@ class ArticleViewScreen extends StatelessWidget {
           Expanded(
             child: Stack(
               children: [
-                Image.asset(
-                  imagePath,
-                  width: double.infinity,
-                  height: 300,
-                  fit: BoxFit.cover,
+                Hero(
+                  tag: imagePath,
+                  child: CachedNetworkImage(
+                    imageUrl: imagePath,
+                    width: double.infinity,
+                    height: 300,
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 Positioned(
-                  top: 37,
-                  right: 9,
+                  top: 30,
+                  right: 10,
                   child: IconButton(
                     onPressed: () => Navigator.of(context).pop(),
                     icon: const Icon(
@@ -40,15 +44,15 @@ class ArticleViewScreen extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: 300,
+                  top: 200,
                   left: 0,
                   right: 0,
                   bottom: 0,
                   child: Container(
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(18),
-                        topRight: Radius.circular(18),
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30),
                       ),
                       color: Colors.white,
                     ),
