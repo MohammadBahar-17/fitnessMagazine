@@ -89,57 +89,43 @@ class _FeaturedArticleCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    color: article.themeColor,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 5,
-                        horizontal: 15,
-                      ),
-                      child: Text(
-                        article.category,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 23,
-                          fontWeight: FontWeight.w200,
-                        ),
-                      ),
-                    ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                color: article.themeColor,
+                padding: EdgeInsets.all(10.0),
+                child: Text(
+                  article.category,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 23,
+                    fontWeight: FontWeight.w200,
                   ),
                 ),
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Text(
-                    article.title,
-                    maxLines: 1,
-                    style: const TextStyle(
-                      color: Color(0xFF5A5A5A),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
+              SizedBox(
+                height: 8,
+              ),
+              Text(
+                article.title,
+                maxLines: 1,
+                style: const TextStyle(
+                  color: Color(0xFF5A5A5A),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Text(
-                    article.summary,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      color: Color(0xFF575757),
-                      fontSize: 14,
-                    ),
-                  ),
+              SizedBox(
+                height: 8,
+              ),
+              Text(
+                article.summary,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  color: Color(0xFF575757),
+                  fontSize: 14,
                 ),
               ),
             ],
