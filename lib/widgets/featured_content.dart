@@ -3,13 +3,13 @@ import 'package:fitness_magazine/models/content_models.dart';
 import 'package:fitness_magazine/views/article_view_screen.dart';
 import 'package:flutter/material.dart';
 
-class FeaturedContentSlider extends StatelessWidget {
+class FeaturedContent extends StatelessWidget {
   final List<FeaturedArticle> featuredArticles;
 
-  const FeaturedContentSlider({
-    Key? key,
+  const FeaturedContent({
+    super.key,
     required this.featuredArticles,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +27,9 @@ class _FeaturedArticleCard extends StatelessWidget {
   final FeaturedArticle article;
 
   const _FeaturedArticleCard({
-    Key? key,
+    super.key,
     required this.article,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

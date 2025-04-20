@@ -7,11 +7,11 @@ class ArticleViewScreen extends StatelessWidget {
   final String imagePath;
 
   const ArticleViewScreen({
-    Key? key,
+    super.key,
     required this.title,
     required this.content,
     required this.imagePath,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

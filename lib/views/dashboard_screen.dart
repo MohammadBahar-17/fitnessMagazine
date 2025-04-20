@@ -1,10 +1,10 @@
 import 'package:fitness_magazine/data/content_repository.dart';
 import 'package:fitness_magazine/widgets/category_content_list.dart';
-import 'package:fitness_magazine/widgets/featured_content_slider.dart';
+import 'package:fitness_magazine/widgets/featured_content.dart';
 import 'package:flutter/material.dart';
 
 class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({Key? key}) : super(key: key);
+  const DashboardScreen({super.key});
 
   @override
   State<DashboardScreen> createState() => _DashboardScreenState();
@@ -41,7 +41,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           children: [
             SizedBox(
               height: 320,
-              child: FeaturedContentSlider(
+              child: FeaturedContent(
                 featuredArticles: _repository.getFeaturedArticles(),
               ),
             ),

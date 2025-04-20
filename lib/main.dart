@@ -2,7 +2,7 @@ import 'package:fitness_magazine/views/dashboard_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 
-void main() async {
+void main() {
   runApp(const MyApp());
 }
 

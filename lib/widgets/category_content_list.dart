@@ -7,28 +7,28 @@ class CategoryContentList extends StatelessWidget {
   final List<Article> articles;
 
   const CategoryContentList({
-    Key? key,
+    super.key,
     required this.articles,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: articles.length,
       itemBuilder: (context, index) {
-        return _ArticleListItem(article: articles[index]);
+        return _ArticleList(article: articles[index]);
       },
     );
   }
 }
 
-class _ArticleListItem extends StatelessWidget {
+class _ArticleList extends StatelessWidget {
   final Article article;
 
-  const _ArticleListItem({
-    Key? key,
+  const _ArticleList({
+    super.key,
     required this.article,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
