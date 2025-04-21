@@ -1,0 +1,2 @@
+C:/Users/bahar/StudioProjects/fitness_magazine/android/app/.cxx/Debug/4f38t399/x86/CMakeFiles/edit_cache.dir
+C:/Users/bahar/StudioProjects/fitness_magazine/android/app/.cxx/Debug/4f38t399/x86/CMakeFiles/rebuild_cache.dir

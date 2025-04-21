@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:fitness_magazine/textStyle/custom_style.dart';
 import 'package:flutter/material.dart';
 
 class ArticleViewScreen extends StatelessWidget {
@@ -64,21 +65,14 @@ class ArticleViewScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(8),
                             child: Text(
                               title,
-                              style: const TextStyle(
-                                color: Color(0xFF5A5A5A),
-                                fontSize: 22,
-                                fontWeight: FontWeight.w200,
-                              ),
+                              style: AppTextStyles.title(),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8),
                             child: Text(
                               content,
-                              style: const TextStyle(
-                                color: Color(0xFF5A5A5A),
-                                fontSize: 18,
-                              ),
+                              style: AppTextStyles.content(),
                             ),
                           ),
                         ],

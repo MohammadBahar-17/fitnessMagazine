@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fitness_magazine/models/content_models.dart';
+import 'package:fitness_magazine/textStyle/custom_style.dart';
 import 'package:fitness_magazine/views/article_view_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -82,19 +83,13 @@ class _ArticleList extends StatelessWidget {
                         Text(
                           maxLines: 1,
                           article.title,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                          ),
+                          style: AppTextStyles.articleTitleCat(),
                         ),
                         Text(
                           article.summary,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 2,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
-                          ),
+                          style: AppTextStyles.articleSummaryCat(),
                         ),
                         const SizedBox(height: 10),
                         Row(

@@ -3,6 +3,8 @@ import 'package:fitness_magazine/widgets/category_content_list.dart';
 import 'package:fitness_magazine/widgets/featured_content.dart';
 import 'package:flutter/material.dart';
 
+import 'package:fitness_magazine/textStyle/custom_style.dart';
+
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
 
@@ -28,13 +30,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           centerTitle: true,
-          title: const Text(
-            'مركز الصحة',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
+          title: Text(
+            'مجلة صحية',
+            style: AppTextStyles.appBarTitle(),
           ),
         ),
         body: Column(
@@ -52,7 +50,72 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 labelPadding: const EdgeInsets.all(8),
                 dividerColor: Colors.transparent,
                 indicatorColor: const Color(0xFF48444D),
-                tabs: _tabLabels.map((label) => Text(label)).toList(),
+                tabs: [
+                  Tab(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      child: ColoredBox(
+                        color: Color(0xFFF1F1F1),
+                        child: Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          child: Text(
+                            'تغذية',
+                            style: AppTextStyles.tabBar(),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Tab(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      child: ColoredBox(
+                        color: Color(0xFFF1F1F1),
+                        child: Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          child: Text(
+                            'صحة',
+                            style: AppTextStyles.tabBar(),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Tab(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      child: ColoredBox(
+                        color: Color(0xFFF1F1F1),
+                        child: Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          child: Text(
+                            'جمال',
+                            style: AppTextStyles.tabBar(),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Tab(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      child: ColoredBox(
+                        color: Color(0xFFF1F1F1),
+                        child: Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          child: Text(
+                            'لياقة',
+                            style: AppTextStyles.tabBar(),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             Expanded(

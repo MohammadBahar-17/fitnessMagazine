@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fitness_magazine/models/content_models.dart';
+import 'package:fitness_magazine/textStyle/custom_style.dart';
 import 'package:fitness_magazine/views/article_view_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -97,11 +98,7 @@ class _FeaturedArticleCard extends StatelessWidget {
                 padding: EdgeInsets.all(10.0),
                 child: Text(
                   article.category,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 23,
-                    fontWeight: FontWeight.w200,
-                  ),
+                  style: AppTextStyles.articleCategory(),
                 ),
               ),
               SizedBox(
@@ -110,11 +107,7 @@ class _FeaturedArticleCard extends StatelessWidget {
               Text(
                 article.title,
                 maxLines: 1,
-                style: const TextStyle(
-                  color: Color(0xFF5A5A5A),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: AppTextStyles.articleTitle(),
               ),
               SizedBox(
                 height: 8,
@@ -123,10 +116,7 @@ class _FeaturedArticleCard extends StatelessWidget {
                 article.summary,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  color: Color(0xFF575757),
-                  fontSize: 14,
-                ),
+                style: AppTextStyles.articleSummary(),
               ),
             ],
           ),
