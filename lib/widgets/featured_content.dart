@@ -94,6 +94,7 @@ class _FeaturedArticleCard extends StatelessWidget {
                 height: 10,
               ),
               Container(
+                width: 90,
                 color: article.themeColor,
                 padding: EdgeInsets.all(10.0),
                 child: Text(
