@@ -65,11 +65,13 @@ class _ArticleList extends StatelessWidget {
                       width: 100,
                       height: 120,
                       fit: BoxFit.cover,
-                      placeholder: (context, url) => const Center(
-                        child: CircularProgressIndicator(),
+                      placeholder: (context, url) => Image.asset(
+                        'assets/images/placeholder.png', // Your placeholder image path
+                        width: 100,
+                        height: 120,
+                        fit: BoxFit.cover,
                       ),
-                      errorWidget: (context, url, error) =>
-                          const Icon(Icons.error),
+                      errorWidget: (context, url, error) => Icon(Icons.error),
                     ),
                   ),
                 ),
