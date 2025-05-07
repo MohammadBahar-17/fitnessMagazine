@@ -66,7 +66,7 @@ class _ArticleList extends StatelessWidget {
                       height: 120,
                       fit: BoxFit.cover,
                       placeholder: (context, url) => Image.asset(
-                        'assets/images/placeholder.png', // Your placeholder image path
+                        'assets/images/placeholder.png',
                         width: 100,
                         height: 120,
                         fit: BoxFit.cover,
